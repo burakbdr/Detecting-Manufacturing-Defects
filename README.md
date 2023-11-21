@@ -18,6 +18,8 @@ Anomaly detection is a crucial aspect of quality control in manufacturing. This 
 - **Anomaly Detection**: Calculates the reconstruction error between original and reconstructed images to identify anomalies.
 - **Bounding Box Visualization**: Locates anomaly regions by drawing rectangles around areas with high reconstruction errors.
 - **Image Segmentation**: Utilizes contour detection to segment and isolate anomalies in the images.
+- **Classification**: Implements a classification model to categorize anomalies into different classes based on the MVTec dataset categories.
+
 
 ### Dataset Used
 
@@ -43,22 +45,26 @@ The code employs Python with TensorFlow and OpenCV libraries for image processin
 - Matplotlib
 - NumPy
 
+
 ### Instructions
 
 1. Clone the repository.
 2. Install dependencies: `pip install -r requirements.txt`.
-3. Run the anomaly detection script.
+3. Download the [MVTec dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad) and organize it as per project requirements.
+4. Run the anomaly detection and classification scripts.
 
 ## Results
 
-The system successfully identifies anomalies in manufacturing images from the MVTec dataset, providing visualizations of the detected defects.
+The system successfully identifies anomalies in manufacturing images from the MVTec dataset, providing visualizations of the detected defects and categorizing them into different classes based on the dataset categories.
 
 
 ## Future Improvements
 
-- Experimentation with different pre-trained models for improved feature extraction.
+- Experimentation with different classification pre-trained models for improved feature extraction, accuracy in anomaly classification.
 - Fine-tuning the thresholding and anomaly detection parameters for better accuracy.
 - Enhancing the segmentation algorithm for precise anomaly isolation.
+- Integration of multi-modal information for enhanced anomaly detection and classification.
+- Deployment of the model for real-time anomaly detection in manufacturing environments.
 
 ## Contribution
 
