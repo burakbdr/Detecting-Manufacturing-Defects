@@ -1,20 +1,29 @@
-# Anomaly Detection in Manufacturing using Autoencoder with Pre-trained ResNet-50
+# Anomaly Detection in Manufacturing
 
 ## Overview
 
-This project focuses on utilizing a pre-trained ResNet-50 model as part of an autoencoder architecture for anomaly detection in manufacturing. The autoencoder is trained on normal manufacturing data with augmented imgaes and can identify anomalies by reconstructing input images and calculating reconstruction errors.
+This project emphasizes the use of an autoencoder architecture, particularly with a pre-trained ResNet-50 model for feature extraction and reconstruction, to address anomaly detection in manufacturing. Traditional and hybrid machine learning approaches are found to be unsatisfactory in comparison. The autoencoder is trained on augmented normal manufacturing data, enabling it to identify anomalies by reconstructing input images and calculating reconstruction errors. The detection process involves comparing the reconstructed images with the original ones, contributing to effective quality control in manufacturing.
 
-
-## Introduction
-
-Anomaly detection is a crucial aspect of quality control in manufacturing. This project employs an autoencoder with a pre-trained ResNet-50 model for feature extraction and reconstruction. By comparing the reconstructed images with the original ones, anomalies are detected based on the reconstruction errors.
-
+![CNN](images/cnn.png)
 
 ## Description
 
+### Jupyter Notebook Descriptions:
+
+- **Support Vector Machines :**  SVM utilies the classical machine learning tool to identify anomaly. It can be treated as a baseline model. 
+
+- **Hybrid Model :** In this file we combine CNN, AutoEncoder with and without pre-trained model (VGG16) in combination with Isolation Forest and Local Outlier Model.
+
+- **Stacked Autoencoder :** Employes two simple autoencoder architecture to identify anomalies. 
+
+- **Autoencoder ResNet :** This model uses **ResNet50** as a backbone in addition to residual blocks and more complex autoencoder structure. 
+
+![resnet](images/resnet50.png)
+
+- **Autoencoder :** This model combines the Autoencoder ResNet50 model with data augmentation and early stopping to identify the best parameters and localize anomalies. 
+
 ### Methodology
 
-- **Autoencoder Architecture**: Utilizes a pre-trained ResNet-50 model within an autoencoder architecture for feature extraction and image reconstruction.
 - **Anomaly Detection**: Calculates the reconstruction error between original and reconstructed images to identify anomalies.
 - **Bounding Box Visualization**: Locates anomaly regions by drawing rectangles around areas with high reconstruction errors.
 - **Image Segmentation**: Utilizes contour detection to segment and isolate anomalies in the images.
@@ -25,15 +34,7 @@ Anomaly detection is a crucial aspect of quality control in manufacturing. This 
 
 The [MVTec dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad), known for its comprehensive collection of real-world textures and objects, has been used for training and evaluation. This dataset contains images of various materials and objects captured under different conditions, enabling robust anomaly detection models.
 
-
-### Implementation
-
-The code employs Python with TensorFlow and OpenCV libraries for image processing and computer vision tasks. The process involves:
-
-1. **Loading Pre-trained ResNet-50**: Importing the ResNet-50 model with pre-trained ImageNet weights.
-2. **Autoencoder Setup**: Constructing an autoencoder architecture using the ResNet-50 layers.
-3. **Anomaly Detection**: Calculating reconstruction errors and identifying anomaly areas.
-4. **Visualization**: Displaying original images, reconstructed images, bounding boxes around anomalies, and segmented anomaly areas.
+![mvtech](images/mvtech.png)
 
 ## Usage
 
@@ -57,6 +58,7 @@ The code employs Python with TensorFlow and OpenCV libraries for image processin
 
 The system successfully identifies anomalies in manufacturing images from the MVTec dataset, providing visualizations of the detected defects and categorizing them into different classes based on the dataset categories.
 
+![results](images/results.png)
 
 ## Future Improvements
 
