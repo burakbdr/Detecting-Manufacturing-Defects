@@ -7,5 +7,5 @@ scikit-learn==1.5.0
 pydot==1.4.2
 tensorflow-macos==2.8.0
 tensorflow-metal==0.4.0
-Keras==3.13.2
+Keras==3.15.0
 tensorflow-hub==0.12.0
